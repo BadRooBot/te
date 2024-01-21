@@ -26,10 +26,8 @@ class Bot:
 app = Flask(__name__)
 bot = Bot()
 
-@app.route('/')
 def home():
     return 'Hello, World! i ABosherif'
-
 @app.route('/start')
 def start():
     bot.start(home_page="https://d.apkpure.net/b/APK/com.blacklotus.app?versionCode=3")
