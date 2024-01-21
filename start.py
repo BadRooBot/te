@@ -35,7 +35,6 @@ def start():
                 
         response = requests.get("http://127.0.0.1:5000/")
         time.sleep(4)
-        print(response.text)  # {'message': 'Hello, World!'}
 
     return 'NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN'
 
