@@ -12,14 +12,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 # import requests
 driver_path = "edge_driver/msedgedriver.exe"
-base_url='https://d.apkpure.net/b/APK/com.blacklotus.app?versionCode=3';
+base_url='https://d.apkpure.net/b/APK/com.blacklotus.app?version=latest';
 options = EdgeOptions()
 # options.headless = True
 # options.add_argument('headless')
 service = EdgeService(executable_path=driver_path)
 driver = webdriver.Edge(service=service, options=options)
 driver.get('https://bestegytech.blogspot.com/')
-filename='_1.0.3_Apkpure.apk'
+filename='_1.0.5_Apkpure.apk'
 def good_luck():
     try:
         driver.get(base_url)
@@ -33,9 +33,9 @@ def good_luck():
             os.remove(filename)
 
         for  i in range(100):
-            if os.path.exists(f"_1.0.3_Apkpure ({i}).apk"):
+            if os.path.exists(f"_1.0.5_Apkpure ({i}).apk"):
                 print(f"Removing incomplete download: {filename}.part")
-                os.remove(f"_1.0.3_Apkpure ({i}).apk")
+                os.remove(f"_1.0.5_Apkpure ({i}).apk")
 
 
         print("Good Luck for Test")
