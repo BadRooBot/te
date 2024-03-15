@@ -26,21 +26,26 @@ def good_luck():
         time.sleep(1)
         print("File downloaded successfully.")
     except Exception as e:
-        print(f"Error while downloading file: {e}")
+        good_luck()
     finally:
         if os.path.exists(filename):
-            print(f"Removing existing file: {filename}")
-            os.remove(filename)
-
+            try:
+                print(f"Removing existing file: {filename}")
+                os.remove(filename)
+            except:    
+                            good_luck()
         for  i in range(100):
             if os.path.exists(f"_1.0.5_Apkpure ({i}).apk"):
-                print(f"Removing incomplete download: {filename}.part")
-                os.remove(f"_1.0.5_Apkpure ({i}).apk")
+                try:
+                    print(f"Removing incomplete download: {filename}.part")
+                    os.remove(f"_1.0.5_Apkpure ({i}).apk")
+                except:    
+                            good_luck()
 
 
         print("Good Luck for Test")
 
-schedule.every(3).seconds.do(good_luck)
+schedule.every(.8).seconds.do(good_luck)
 
 while True:
     schedule.run_pending()
